@@ -205,7 +205,7 @@ export class CustomerService {
 
 			// Compute total points from already-loaded pointTransactions
 			const totalPoints = (c.pointTransactions ?? []).reduce(
-				(sum: number, pt: any) => sum + (Number(pt.points) || 0),
+				(sum: number, pt: any) => sum + Number(pt.points ?? 0),
 				0
 			);
 
